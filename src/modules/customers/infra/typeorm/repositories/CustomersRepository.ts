@@ -12,7 +12,7 @@ class CustomersRepository implements ICustomersRepository {
   }
 
   public async create({ name, email }: ICreateCustomerDTO): Promise<Customer> {
-    const customer = this.ormRepository.create({
+    const customer = await this.ormRepository.create({
       name,
       email,
     });
